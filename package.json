@@ -1,0 +1,25 @@
+{
+  "name": "project-swap-mariadb-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "permissionDB": "sudo mysql -u root -p < ./db/permission.sql",
+    "integrateProcedure": "sudo mysql -u root -p < ./db/procedure.sql",
+    "integrateDB": "sudo mysql -u root -p < ./db/database.sql && npm run permissionDB && npm run integrateProcedure",
+    "test": "mocha test/procedure.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^9.1.1",
+    "proxyquire": "^2.1.3",
+    "sinon": "^11.1.2",
+    "sinon-chai": "^3.7.0"
+  },
+  "dependencies": {
+    "promise-mysql": "^5.0.3"
+  }
+}
